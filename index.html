@@ -8,24 +8,28 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Sandbox ElectronJs</h1>
+    <h1>Img Converter</h1>
 
     <button id="button">Invia</button>
+
+    <h2 id="response"></h2>
 
   <script>
     const { ipcRenderer } = require('electron');
 
     const button = document.getElementById('button');
 
-    button.addEventListener('click', () => {
-      console.log('log di test');
-      // Emissione dato ipc verso il Main Process
-      ipcRenderer.send('datoIPC', {data: 'dataDaIPC'})
-    })
+    button.addEventListener('click', imgConverter)
+
+    function imgConverter() {
+      ipcRenderer.send('imgWebp')
+    }
 
     // Dato da Main Process
     ipcRenderer.on('datoMainProcess', (event, data) => {
       console.log('Dato Main Process Arrivato: ', data);
+      let response = document.getElementById('response');
+      response.innerText = data.data
     })
   </script>
 

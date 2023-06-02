@@ -19,5 +19,8 @@
   "homepage": "https://github.com/GiacomoBorsellino/electronjs-course#readme",
   "devDependencies": {
     "electron": "^25.0.1"
+  },
+  "dependencies": {
+    "webp-converter": "^2.3.3"
   }
 }
