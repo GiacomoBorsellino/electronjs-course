@@ -1,0 +1,23 @@
+{
+  "name": "electronjs-course",
+  "version": "1.0.0",
+  "description": "Appunti corso Electron.Js",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiacomoBorsellino/electronjs-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiacomoBorsellino/electronjs-course/issues"
+  },
+  "homepage": "https://github.com/GiacomoBorsellino/electronjs-course#readme",
+  "devDependencies": {
+    "electron": "^25.0.1"
+  }
+}
