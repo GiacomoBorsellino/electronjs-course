@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primo progetto ElectronJs</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Img Converter</h1>
+
+    <button id="button">Invia</button>
+
+    <h2 id="response"></h2>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    const button = document.getElementById('button');
+
+    button.addEventListener('click', imgConverter)
+
+    function imgConverter() {
+      ipcRenderer.send('imgWebp')
+    }
+
+    // Dato da Main Process
+    ipcRenderer.on('datoMainProcess', (event, data) => {
+      console.log('Dato Main Process Arrivato: ', data);
+      let response = document.getElementById('response');
+      response.innerText = data.data
+    })
+  </script>
+
+    <footer style="display: block; position: absolute; bottom: 10px; right: 10px;">
+      We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+    </footer>
+  </body>
+</html>
