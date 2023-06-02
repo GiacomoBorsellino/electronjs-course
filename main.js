@@ -14,8 +14,14 @@ let mainWindow;
 // Inizializzazione della finestra e associazione alla finestra web
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        // width: 600,
+        // height: 480,
+        // maxHeight: 800,
+        // minWidth: 600,
+        transparent: true,
+        frame:false,
+        // V Funziona solo con macOS
+        roundedCorners: true, 
         // Preferenze lato web
         webPreferences: {
             // Integra node lato web

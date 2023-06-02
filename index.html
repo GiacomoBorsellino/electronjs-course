@@ -8,35 +8,38 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Img Converter</h1>
+    <main class="container">
+      <div class="box"></div>
+      <h1>Img Converter</h1>
 
-    <button id="button">Invia</button>
+      <button id="button">Invia</button>
 
-    <h2 id="response"></h2>
+      <h2 id="response"></h2>
 
-  <script>
-    const { ipcRenderer } = require('electron');
+    <script>
+      const { ipcRenderer } = require('electron');
 
-    const button = document.getElementById('button');
+      const button = document.getElementById('button');
 
-    button.addEventListener('click', imgConverter)
+      button.addEventListener('click', imgConverter)
 
-    function imgConverter() {
-      ipcRenderer.send('imgWebp')
-    }
+      function imgConverter() {
+        ipcRenderer.send('imgWebp')
+      }
 
-    // Dato da Main Process
-    ipcRenderer.on('datoMainProcess', (event, data) => {
-      console.log('Dato Main Process Arrivato: ', data);
-      let response = document.getElementById('response');
-      response.innerText = data.data
-    })
-  </script>
+      // Dato da Main Process
+      ipcRenderer.on('datoMainProcess', (event, data) => {
+        console.log('Dato Main Process Arrivato: ', data);
+        let response = document.getElementById('response');
+        response.innerText = data.data
+      })
+    </script>
 
-    <footer style="display: block; position: absolute; bottom: 10px; right: 10px;">
-      We are using Node.js <span id="node-version"></span>,
-      Chromium <span id="chrome-version"></span>,
-      and Electron <span id="electron-version"></span>.
-    </footer>
+      <footer style="margin-top: 100px;">
+        We are using Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        and Electron <span id="electron-version"></span>.
+      </footer>
+    </main>
   </body>
 </html>
