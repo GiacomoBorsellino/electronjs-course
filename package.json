@@ -4,7 +4,7 @@
   "description": "Appunti corso Electron.Js",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron ./src/main.js"
   },
   "repository": {
     "type": "git",
