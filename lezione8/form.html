@@ -14,6 +14,7 @@
 
   <body>
     <main class="container">
+
       <div class="menu">
         <button id="minimize" class="menu-btn">
           <span class="material-icons">minimize</span>
@@ -26,9 +27,12 @@
         </button>
       </div>
 
-      <h1>Icona Tray Windows</h1>
+      <h1>More Windows 2</h1>
 
-      <h4 id="finalResponse"></h4>
+      <div>
+        <input type="text" id="formText" placeholder="test">
+        <button id="formButton">Invia</button>
+    </div>
 
       <footer
         style="margin-top: 100px; position: absolute; bottom: 10px; right: 10px"
@@ -38,7 +42,16 @@
         <span id="electron-version"></span>.
       </footer>
 
-      <script src="./script.js"></script>
+      <script>
+        // const { ipcRenderer } = require("electron");
+        const formButton = document.getElementById("formButton");
+        const formText = document.getElementById("formText");
+
+        formButton.addEventListener("click", () => {
+            console.log('ccc');
+            // ipcRenderer.send("window:close");
+        });
+      </script>
     </main>
   </body>
 </html>
