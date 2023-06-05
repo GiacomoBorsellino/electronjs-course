@@ -21,6 +21,7 @@
     "electron": "^25.0.1"
   },
   "dependencies": {
+    "electron-context-menu": "^3.6.1",
     "webp-converter": "^2.3.3"
   }
 }
