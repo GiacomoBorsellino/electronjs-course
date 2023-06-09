@@ -4,24 +4,32 @@
   "description": "Appunti corso Electron.Js",
   "main": "main.js",
   "scripts": {
-    "start": "electron ./src/main.js"
+    "start": "electron-forge start ./src/main.js",
+    "package": "electron-forge package ./src/main.js",
+    "make": "electron-forge make ./src/main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GiacomoBorsellino/electronjs-course.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Giacomo Borsellino",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GiacomoBorsellino/electronjs-course/issues"
   },
   "homepage": "https://github.com/GiacomoBorsellino/electronjs-course#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
     "electron": "^25.0.1"
   },
   "dependencies": {
     "electron-context-menu": "^3.6.1",
+    "electron-squirrel-startup": "^1.0.0",
     "mousetrap": "^1.6.5",
     "webp-converter": "^2.3.3"
   }
